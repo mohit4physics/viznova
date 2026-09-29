@@ -1,0 +1,146 @@
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #090d16;
+  color: #f3f4f6;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 10% 20%, #111827 0%, #030712 90%);
+  overflow-x: hidden;
+}
+
+.app-container {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  height: 100vh;
+}
+
+/* Sidebar Controls */
+.sidebar {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(16px);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+}
+
+.brand h1 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #60a5fa, #c084fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.control-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #9ca3af;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+select, input, button {
+  background: rgba(31, 41, 55, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+select:focus, input:focus {
+  border-color: #818cf8;
+  box-shadow: 0 0 15px rgba(129, 140, 248, 0.3);
+}
+
+button {
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(147, 51, 234, 0.4);
+}
+
+/* Main Visualizer Area */
+.main-content {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow-y: auto;
+}
+
+.canvas-card {
+  background: rgba(17, 24, 39, 0.5);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  flex-grow: 1;
+  min-height: 500px;
+}
+
+/* Editable Typography */
+[contenteditable="true"] {
+  border-bottom: 1px dashed rgba(129, 140, 248, 0.4);
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+[contenteditable="true"]:hover {
+  background: rgba(129, 140, 248, 0.1);
+}
+
+.chart-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 4px;
+  color: #f9fafb;
+}
+
+.chart-subtitle {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.canvas-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

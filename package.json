@@ -1,0 +1,30 @@
+{
+  "name": "aetherviz-local",
+  "private": true,
+  "version": "0.0.0",
+  "description": "VizNova — a local desktop application for creating, exploring, and exporting data visualizations.",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "electron:dev": "electron .",
+    "dist:win": "npm run build && electron-builder --win nsis portable"
+  },
+  "devDependencies": {
+    "@types/papaparse": "^5.5.2",
+    "@types/plotly.js-dist-min": "^2.3.4",
+    "@types/three": "^0.186.0",
+    "electron": "^44.4.5",
+    "electron-builder": "^26.15.3",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  },
+  "dependencies": {
+    "jspdf": "^4.2.1",
+    "papaparse": "^5.7.0",
+    "plotly.js-dist-min": "^4.1.1",
+    "xlsx": "^0.18.5"
+  }
+}
