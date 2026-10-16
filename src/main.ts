@@ -2558,12 +2558,15 @@ function setupPhase4ProjectSystem(): void {
     }
   });
 
-  const autosaved = safeJson<ProjectSnapshot | null>(localStorage.getItem(AUTOSAVE_KEY), null);
-  if (autosaved && autosaved.version === 4) {
-  projectStatus(
-    'Demo ready. Use Load Project or Recent Projects to restore saved work.'
+    const autosaved = safeJson<ProjectSnapshot | null>(
+    localStorage.getItem(AUTOSAVE_KEY),
+    null
   );
-      }
+
+  if (autosaved && autosaved.version === 4) {
+    projectStatus(
+      'Demo ready. Use Load Project or Recent Projects to restore saved work.'
+    );
   }
 
   window.setInterval(() => {
