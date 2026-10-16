@@ -2567,8 +2567,11 @@ function setupPhase4ProjectSystem(): void {
     projectStatus(
       'Demo ready. Use Load Project or Recent Projects to restore saved work.'
     );
+  if (autosaved && autosaved.version === 4) {
+    projectStatus(
+      'Demo ready. Use Load Project or Recent Projects to restore saved work.'
+    );
   }
-
   window.setInterval(() => {
     if (autosave?.checked) {
       const snapshot = getCurrentProjectSnapshot();
