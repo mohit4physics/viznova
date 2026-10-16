@@ -2560,14 +2560,10 @@ function setupPhase4ProjectSystem(): void {
 
   const autosaved = safeJson<ProjectSnapshot | null>(localStorage.getItem(AUTOSAVE_KEY), null);
   if (autosaved && autosaved.version === 4) {
-    try {
-      const shouldRestore = confirm(`Restore autosaved project "${autosaved.name}"?`);
-      if (shouldRestore) applyProjectSnapshot(autosaved);
-    } catch (error) {
-      console.error('VizNova autosave restore skipped:', error);
-      localStorage.removeItem(AUTOSAVE_KEY);
-      projectStatus('Previous autosave was incompatible and has been reset.');
-    }
+  projectStatus(
+    'Demo ready. Use Load Project or Recent Projects to restore saved work.'
+  );
+      }
   }
 
   window.setInterval(() => {
